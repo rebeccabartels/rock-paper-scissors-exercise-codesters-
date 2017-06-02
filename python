@@ -1,0 +1,33 @@
+stage.set_background_color("lightgreen")
+player = codesters.Sprite("cat")
+player.go_to(-100, -125)
+player.set_size(.7)
+
+computer = codesters.Sprite("computer", 125, -125)
+
+stage.wait(1)
+player_choice = player.ask("Enter rock paper or scissors.")
+
+comp_choice = random.randint(1, 3)
+line = codesters.Line(-250, 25, 250, 25, "black")
+if player_choice == "rock":
+    player_pick = codesters.Sprite("rock")
+    player.say("I choose rock")
+if player_choice == "paper":
+    player_pick = codesters.Sprite("paper")
+    player.say("I choose paper")
+if player_choice == "scissors":
+    player_pick = codesters.Sprite("scissors")
+    player.say("I choose scissors")
+player_pick.go_to(-100, 125)
+
+if comp_choice == 1:
+    comp_pick = codesters.Sprite("rock")
+    computer.say("I choose rock")
+if comp_choice == 2:
+    comp_pick = codesters.Sprite("paper")
+    computer.say("I choose paper")
+if comp_choice == 3:
+    comp_pick = codesters.Sprite("scissors")
+    computer.say("I choose scissors")
+comp_pick.go_to(100, 125)
